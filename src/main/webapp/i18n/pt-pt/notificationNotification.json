@@ -1,0 +1,41 @@
+{
+  "gatewayApp": {
+    "notificationNotification": {
+      "home": {
+        "title": "Notifications",
+        "createLabel": "Criar novo(a) Notification",
+        "createOrEditLabel": "Criar ou editar Notification",
+        "notFound": "Nenhum Notifications encontrado"
+      },
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Notification {{ id }}?"
+      },
+      "detail": {
+        "title": "Notification"
+      },
+      "title": "Title",
+      "message": "Message",
+      "timestamp": "Timestamp",
+      "format": "Format",
+      "sender": "Sender",
+      "user": "User",
+      "read": "Read",
+      "help": {
+        "title": "Title of the notification",
+        "message": "Message of the notification",
+        "timestamp": "Time at which the notification was sent",
+        "format": "Type of the notification sent",
+        "sender": "User that sent the notification",
+        "user": "User to which notification should be sent",
+        "read": "Is the notification read?"
+      }
+    }
+  },
+  "notificationApp": {
+    "notificationNotification": {
+      "created": "Um novo Notification foi criado com o identificador {{ param }}",
+      "updated": "Notification com identificador {{ param }} foi actualizado",
+      "deleted": "Notification com identificador {{ param }} foi eliminado"
+    }
+  }
+}

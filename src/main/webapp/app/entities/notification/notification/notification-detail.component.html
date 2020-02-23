@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="notification">
+            <h2><span jhiTranslate="gatewayApp.notificationNotification.detail.title">Notification</span> {{ notification.id }}</h2>
+
+            <hr>
+
+            <hs-alert-error></hs-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewayApp.notificationNotification.title" [ngbTooltip]="'gatewayApp.notificationNotification.help.title' | translate">Title</span></dt>
+                <dd>
+                    <span>{{ notification.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.notificationNotification.message" [ngbTooltip]="'gatewayApp.notificationNotification.help.message' | translate">Message</span></dt>
+                <dd>
+                    <span>{{ notification.message }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.notificationNotification.timestamp" [ngbTooltip]="'gatewayApp.notificationNotification.help.timestamp' | translate">Timestamp</span></dt>
+                <dd>
+                    <span>{{ notification.timestamp }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.notificationNotification.format" [ngbTooltip]="'gatewayApp.notificationNotification.help.format' | translate">Format</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'gatewayApp.NotificationType.' + notification.format }}">{{ notification.format }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.notificationNotification.sender" [ngbTooltip]="'gatewayApp.notificationNotification.help.sender' | translate">Sender</span></dt>
+                <dd>
+                    <span>{{ notification.sender }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.notificationNotification.user" [ngbTooltip]="'gatewayApp.notificationNotification.help.user' | translate">User</span></dt>
+                <dd>
+                    <span>{{ notification.user }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.notificationNotification.read" [ngbTooltip]="'gatewayApp.notificationNotification.help.read' | translate">Read</span></dt>
+                <dd>
+                    <span>{{ notification.read }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/notification', notification.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

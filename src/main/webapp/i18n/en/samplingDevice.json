@@ -1,0 +1,35 @@
+{
+  "gatewayApp": {
+    "samplingDevice": {
+      "home": {
+        "title": "Devices",
+        "createLabel": "Create a new Device",
+        "createOrEditLabel": "Create or edit a Device",
+        "notFound": "No Devices found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Device {{ id }}?"
+      },
+      "detail": {
+        "title": "Device"
+      },
+      "name": "Name",
+      "description": "Description",
+      "type": "Type",
+      "plugin": "Plugin",
+      "help": {
+        "name": "Name of the device",
+        "description": "Details about the device",
+        "type": "Type of device",
+        "plugin": "Plugin name for conversion"
+      }
+    }
+  },
+  "samplingApp": {
+    "samplingDevice": {
+      "created": "A new Device is created with identifier {{ param }}",
+      "updated": "A Device is updated with identifier {{ param }}",
+      "deleted": "A Device is deleted with identifier {{ param }}"
+    }
+  }
+}

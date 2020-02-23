@@ -1,0 +1,30 @@
+{
+  "gatewayApp": {
+    "samplingText": {
+      "home": {
+        "title": "Texts",
+        "createLabel": "Create a new Text",
+        "createOrEditLabel": "Create or edit a Text",
+        "notFound": "No Texts found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Text {{ id }}?"
+      },
+      "detail": {
+        "title": "Text"
+      },
+      "text": "Text",
+      "sample": "Sample",
+      "help": {
+        "text": "Typewritten text collected"
+      }
+    }
+  },
+  "samplingApp": {
+    "samplingText": {
+      "created": "A new Text is created with identifier {{ param }}",
+      "updated": "A Text is updated with identifier {{ param }}",
+      "deleted": "A Text is deleted with identifier {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "gatewayApp": {
+    "projectParticipant": {
+      "home": {
+        "title": "Participants",
+        "createLabel": "Create a new Participant",
+        "createOrEditLabel": "Create or edit a Participant",
+        "notFound": "No Participants found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Participant {{ id }}?"
+      },
+      "detail": {
+        "title": "Participant"
+      },
+      "name": "Name",
+      "gender": "Gender",
+      "birthdate": "Birthdate",
+      "handedness": "Handedness",
+      "additionalInfo": "Additional Info",
+      "image": "Image",
+      "project": "Project",
+      "labels": "Labels",
+      "help": {
+        "name": "Name of the participant",
+        "gender": "Gender of the participant",
+        "birthdate": "Birth date of the participant",
+        "handedness": "Means used by participant for handwriting",
+        "additionalInfo": "Additional information about the participant",
+        "image": "Image of the participant for visual identification"
+      }
+    }
+  },
+  "projectApp": {
+    "projectParticipant": {
+      "created": "A new Participant is created with identifier {{ param }}",
+      "updated": "A Participant is updated with identifier {{ param }}",
+      "deleted": "A Participant is deleted with identifier {{ param }}"
+    }
+  }
+}

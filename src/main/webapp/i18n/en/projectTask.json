@@ -1,0 +1,37 @@
+{
+  "gatewayApp": {
+    "projectTask": {
+      "home": {
+        "title": "Tasks",
+        "createLabel": "Create a new Task",
+        "createOrEditLabel": "Create or edit a Task",
+        "notFound": "No Tasks found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Task {{ id }}?"
+      },
+      "detail": {
+        "title": "Task"
+      },
+      "name": "Name",
+      "description": "Description",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "project": "Project",
+      "labels": "Labels",
+      "help": {
+        "name": "Name of the task",
+        "description": "Details about the task",
+        "startDate": "Date in which the task starts",
+        "endDate": "Date in which the task ends"
+      }
+    }
+  },
+  "projectApp": {
+    "projectTask": {
+      "created": "A new Task is created with identifier {{ param }}",
+      "updated": "A Task is updated with identifier {{ param }}",
+      "deleted": "A Task is deleted with identifier {{ param }}"
+    }
+  }
+}

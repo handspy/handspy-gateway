@@ -1,0 +1,31 @@
+{
+  "gatewayApp": {
+    "pbanalysisPBAnalysis": {
+      "home": {
+        "title": "PB Analyses",
+        "createLabel": "Criar novo(a) PB Analysis",
+        "createOrEditLabel": "Criar ou editar PB Analysis",
+        "notFound": "Nenhum PB Analyses encontrado"
+      },
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) PB Analysis {{ id }}?"
+      },
+      "detail": {
+        "title": "PB Analysis"
+      },
+      "sample": "Sample",
+      "threshold": "Threshold",
+      "help": {
+        "sample": "Sample to which the pause-burst analysis belongs",
+        "threshold": "Threshold used to identify bursts"
+      }
+    }
+  },
+  "pbanalysisApp": {
+    "pbanalysisPBAnalysis": {
+      "created": "Um novo PB Analysis foi criado com o identificador {{ param }}",
+      "updated": "PB Analysis com identificador {{ param }} foi actualizado",
+      "deleted": "PB Analysis com identificador {{ param }} foi eliminado"
+    }
+  }
+}

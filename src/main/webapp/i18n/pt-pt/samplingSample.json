@@ -1,0 +1,35 @@
+{
+  "gatewayApp": {
+    "samplingSample": {
+      "home": {
+        "title": "Samples",
+        "createLabel": "Criar novo(a) Sample",
+        "createOrEditLabel": "Criar ou editar Sample",
+        "notFound": "Nenhum Samples encontrado"
+      },
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Sample {{ id }}?"
+      },
+      "detail": {
+        "title": "Sample"
+      },
+      "task": "Task",
+      "participant": "Participant",
+      "timestamp": "Timestamp",
+      "language": "Language",
+      "help": {
+        "task": "Task in which this sample is inserted.",
+        "participant": "Participant to which this sample belongs.",
+        "timestamp": "Timestamp of collection of the sample",
+        "language": "Language of the sample"
+      }
+    }
+  },
+  "samplingApp": {
+    "samplingSample": {
+      "created": "Um novo Sample foi criado com o identificador {{ param }}",
+      "updated": "Sample com identificador {{ param }} foi actualizado",
+      "deleted": "Sample com identificador {{ param }} foi eliminado"
+    }
+  }
+}

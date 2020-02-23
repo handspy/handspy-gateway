@@ -1,0 +1,11 @@
+{
+  "gatewayApp": {
+    "ProjectStatus": {
+      "null": "",
+      "DRAFT": "DRAFT",
+      "OPEN": "OPEN",
+      "CLOSED": "CLOSED",
+      "DISCARDED": "DISCARDED"
+    }
+  }
+}

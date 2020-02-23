@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="task">
+            <h2><span jhiTranslate="gatewayApp.projectTask.detail.title">Task</span> {{ task.id }}</h2>
+
+            <hr>
+
+            <hs-alert-error></hs-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewayApp.projectTask.name" [ngbTooltip]="'gatewayApp.projectTask.help.name' | translate">Name</span></dt>
+                <dd>
+                    <span>{{ task.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.projectTask.description" [ngbTooltip]="'gatewayApp.projectTask.help.description' | translate">Description</span></dt>
+                <dd>
+                    <span>{{ task.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.projectTask.startDate" [ngbTooltip]="'gatewayApp.projectTask.help.startDate' | translate">Start Date</span></dt>
+                <dd>
+                    <span>{{ task.startDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.projectTask.endDate" [ngbTooltip]="'gatewayApp.projectTask.help.endDate' | translate">End Date</span></dt>
+                <dd>
+                    <span>{{ task.endDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.projectTask.project">Project</span></dt>
+                <dd>
+                    <div *ngIf="task.projectId">
+                        <a [routerLink]="['/project', task.projectId, 'view']">{{ task.projectId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.projectTask.labels">Labels</span></dt>
+                <dd>
+                    <span *ngFor="let labels of task.labels; let last = last">
+                        <a [routerLink]="['/label', labels?.id, 'view']">{{ labels.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/task', task.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

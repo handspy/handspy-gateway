@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewayApp.samplingDot.home.title">Dots</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dot" [routerLink]="['/dot/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewayApp.samplingDot.home.createLabel">
+            Create a new Dot
+            </span>
+        </button>
+    </h2>
+
+    <hs-alert-error></hs-alert-error>
+
+    <hs-alert></hs-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="dots?.length === 0">
+        <span jhiTranslate="gatewayApp.samplingDot.home.notFound">No dots found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="dots?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="gatewayApp.samplingDot.timestamp">Timestamp</span></th>
+                    <th scope="col" ><span jhiTranslate="gatewayApp.samplingDot.x">X</span></th>
+                    <th scope="col" ><span jhiTranslate="gatewayApp.samplingDot.y">Y</span></th>
+                    <th scope="col" ><span jhiTranslate="gatewayApp.samplingDot.type">Type</span></th>
+                    <th scope="col" ><span jhiTranslate="gatewayApp.samplingDot.tiltX">Tilt X</span></th>
+                    <th scope="col" ><span jhiTranslate="gatewayApp.samplingDot.tiltY">Tilt Y</span></th>
+                    <th scope="col" ><span jhiTranslate="gatewayApp.samplingDot.twist">Twist</span></th>
+                    <th scope="col" ><span jhiTranslate="gatewayApp.samplingDot.pressure">Pressure</span></th>
+                    <th scope="col" ><span jhiTranslate="gatewayApp.samplingDot.protocol">Protocol</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dot of dots ;trackBy: trackId">
+                    <td><a [routerLink]="['/dot', dot.id, 'view']">{{ dot.id }}</a></td>
+                    <td>{{ dot.timestamp | date:'medium' }}</td>
+                    <td>{{ dot.x }}</td>
+                    <td>{{ dot.y }}</td>
+                    <td jhiTranslate="{{ 'gatewayApp.DotType.' + dot.type }}">{{ dot.type }}</td>
+                    <td>{{ dot.tiltX }}</td>
+                    <td>{{ dot.tiltY }}</td>
+                    <td>{{ dot.twist }}</td>
+                    <td>{{ dot.pressure }}</td>
+                    <td>
+                        <div *ngIf="dot.protocolId">
+                            <a [routerLink]="['/protocol', dot.protocolId , 'view']" >{{ dot.protocolId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/dot', dot.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/dot', dot.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(dot)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

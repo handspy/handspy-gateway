@@ -1,0 +1,46 @@
+{
+  "gatewayApp": {
+    "pbanalysisPBBurst": {
+      "home": {
+        "title": "PB Bursts",
+        "createLabel": "Create a new PB Burst",
+        "createOrEditLabel": "Create or edit a PB Burst",
+        "notFound": "No PB Bursts found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete PB Burst {{ id }}?"
+      },
+      "detail": {
+        "title": "PB Burst"
+      },
+      "duration": "Duration",
+      "pauseDuration": "Pause Duration",
+      "startX": "Start X",
+      "startY": "Start Y",
+      "endX": "End X",
+      "endY": "End Y",
+      "distance": "Distance",
+      "avgSpeed": "Avg Speed",
+      "text": "Text",
+      "analysis": "Analysis",
+      "help": {
+        "duration": "Duration of the burst",
+        "pauseDuration": "Duration of the pause",
+        "startX": "Start X coordinate of burst",
+        "startY": "Start Y coordinate of burst",
+        "endX": "End X coordinate of burst",
+        "endY": "End Y coordinate of burst",
+        "distance": "Distance traveled during burst",
+        "avgSpeed": "Average speed of burst",
+        "text": "Text slice written in burst"
+      }
+    }
+  },
+  "pbanalysisApp": {
+    "pbanalysisPBBurst": {
+      "created": "A new PB Burst is created with identifier {{ param }}",
+      "updated": "A PB Burst is updated with identifier {{ param }}",
+      "deleted": "A PB Burst is deleted with identifier {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+    "name": "Notification",
+    "fields": [
+        {
+            "fieldName": "title",
+            "javadoc": "Title of the notification",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "60"
+        },
+        {
+            "fieldName": "message",
+            "javadoc": "Message of the notification",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "250"
+        },
+        {
+            "fieldName": "timestamp",
+            "javadoc": "Time at which the notification was sent",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "format",
+            "javadoc": "Type of the notification sent",
+            "fieldType": "NotificationType",
+            "fieldValues": "EMAIL,SMS,INTERNAL",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sender",
+            "javadoc": "User that sent the notification",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "user",
+            "javadoc": "User to which notification should be sent",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "read",
+            "javadoc": "Is the notification read?",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200223181018",
+    "javadoc": "Notification sent to a user.\\n\\n@author José Carlos Paiva",
+    "entityTableName": "notification",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "gateway",
+        "notification"
+    ],
+    "microserviceName": "notification"
+}

@@ -1,0 +1,10 @@
+{
+  "gatewayApp": {
+    "HandwritingMeans": {
+      "null": "",
+      "LEFT_HAND": "LEFT_HAND",
+      "RIGHT_HAND": "RIGHT_HAND",
+      "OTHER": "OTHER"
+    }
+  }
+}

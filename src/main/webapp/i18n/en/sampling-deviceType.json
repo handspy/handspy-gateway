@@ -1,0 +1,9 @@
+{
+  "gatewayApp": {
+    "DeviceType": {
+      "null": "",
+      "PEN": "PEN",
+      "HEART_RATE_METER": "HEART_RATE_METER"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "gatewayApp": {
+    "projectProject": {
+      "home": {
+        "title": "Projects",
+        "createLabel": "Criar novo(a) Project",
+        "createOrEditLabel": "Criar ou editar Project",
+        "notFound": "Nenhum Projects encontrado"
+      },
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Project {{ id }}?"
+      },
+      "detail": {
+        "title": "Project"
+      },
+      "name": "Name",
+      "description": "Description",
+      "image": "Image",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "status": "Status",
+      "owner": "Owner",
+      "help": {
+        "name": "Name of the project",
+        "description": "Details about the project",
+        "image": "Image of the project for visual identification",
+        "startDate": "Date in which the project starts",
+        "endDate": "Date in which the project ends",
+        "status": "Status of the project",
+        "owner": "Owner of the project"
+      }
+    }
+  },
+  "projectApp": {
+    "projectProject": {
+      "created": "Um novo Project foi criado com o identificador {{ param }}",
+      "updated": "Project com identificador {{ param }} foi actualizado",
+      "deleted": "Project com identificador {{ param }} foi eliminado"
+    }
+  }
+}

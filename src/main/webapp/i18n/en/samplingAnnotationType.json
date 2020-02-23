@@ -1,0 +1,39 @@
+{
+  "gatewayApp": {
+    "samplingAnnotationType": {
+      "home": {
+        "title": "Annotation Types",
+        "createLabel": "Create a new Annotation Type",
+        "createOrEditLabel": "Create or edit a Annotation Type",
+        "notFound": "No Annotation Types found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Annotation Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Annotation Type"
+      },
+      "name": "Name",
+      "label": "Label",
+      "description": "Description",
+      "emotional": "Emotional",
+      "weight": "Weight",
+      "color": "Color",
+      "help": {
+        "name": "Name of this type of annotation",
+        "label": "Label of this type of annotation",
+        "description": "Details about this type of annotation",
+        "emotional": "Is it an emotional annotation?",
+        "weight": "Weight of annotations of this type (e.g. an emotional annotation of sadness may have a negative weight while an emotional annotation of hapiness may have a positive weight)",
+        "color": "Color associated with this type of annotation"
+      }
+    }
+  },
+  "samplingApp": {
+    "samplingAnnotationType": {
+      "created": "A new Annotation Type is created with identifier {{ param }}",
+      "updated": "A Annotation Type is updated with identifier {{ param }}",
+      "deleted": "A Annotation Type is deleted with identifier {{ param }}"
+    }
+  }
+}

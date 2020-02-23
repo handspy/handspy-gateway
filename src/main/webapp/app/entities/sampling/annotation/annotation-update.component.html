@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="hs-annotation-heading" jhiTranslate="gatewayApp.samplingAnnotation.home.createOrEditLabel">Create or edit a Annotation</h2>
+
+            <div>
+                <hs-alert-error></hs-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingAnnotation.type" for="field_type" [ngbTooltip]="'gatewayApp.samplingAnnotation.help.type' | translate">Type</label>
+                    <input type="number" class="form-control" name="type" id="field_type"
+                           formControlName="type"/>
+                    <div *ngIf="editForm.get('type')!.invalid && (editForm.get('type')!.dirty || editForm.get('type')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('type')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('type')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingAnnotation.start" for="field_start" [ngbTooltip]="'gatewayApp.samplingAnnotation.help.start' | translate">Start</label>
+                    <input type="number" class="form-control" name="start" id="field_start"
+                           formControlName="start"/>
+                    <div *ngIf="editForm.get('start')!.invalid && (editForm.get('start')!.dirty || editForm.get('start')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('start')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('start')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingAnnotation.size" for="field_size" [ngbTooltip]="'gatewayApp.samplingAnnotation.help.size' | translate">Size</label>
+                    <input type="number" class="form-control" name="size" id="field_size"
+                           formControlName="size"/>
+                    <div *ngIf="editForm.get('size')!.invalid && (editForm.get('size')!.dirty || editForm.get('size')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('size')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('size')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingAnnotation.note" for="field_note" [ngbTooltip]="'gatewayApp.samplingAnnotation.help.note' | translate">Note</label>
+                    <input type="text" class="form-control" name="note" id="field_note"
+                           formControlName="note"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingAnnotation.text" for="field_text">Text</label>
+                    <select class="form-control" id="field_text" name="text" formControlName="textId">
+                        <option *ngIf="!editForm.get('textId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="textOption.id" *ngFor="let textOption of texts; trackBy: trackById">{{ textOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('textId')!.invalid && (editForm.get('textId')!.dirty || editForm.get('textId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('textId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

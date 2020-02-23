@@ -1,0 +1,44 @@
+{
+  "gatewayApp": {
+    "samplingDot": {
+      "home": {
+        "title": "Dots",
+        "createLabel": "Criar novo(a) Dot",
+        "createOrEditLabel": "Criar ou editar Dot",
+        "notFound": "Nenhum Dots encontrado"
+      },
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Dot {{ id }}?"
+      },
+      "detail": {
+        "title": "Dot"
+      },
+      "timestamp": "Timestamp",
+      "x": "X",
+      "y": "Y",
+      "type": "Type",
+      "tiltX": "Tilt X",
+      "tiltY": "Tilt Y",
+      "twist": "Twist",
+      "pressure": "Pressure",
+      "protocol": "Protocol",
+      "help": {
+        "timestamp": "Moment at which the dot was captured",
+        "x": "Position of dot in X axis",
+        "y": "Position of dot in Y axis",
+        "type": "Type of dot emitted",
+        "tiltX": "Tilt of the pen in X axis",
+        "tiltY": "Tilt of the pen in Y axis",
+        "twist": "Twist angle of the pen",
+        "pressure": "Pressure applied to the pen tip"
+      }
+    }
+  },
+  "samplingApp": {
+    "samplingDot": {
+      "created": "Um novo Dot foi criado com o identificador {{ param }}",
+      "updated": "Dot com identificador {{ param }} foi actualizado",
+      "deleted": "Dot com identificador {{ param }} foi eliminado"
+    }
+  }
+}

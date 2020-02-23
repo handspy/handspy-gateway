@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="annotation">
+            <h2><span jhiTranslate="gatewayApp.samplingAnnotation.detail.title">Annotation</span> {{ annotation.id }}</h2>
+
+            <hr>
+
+            <hs-alert-error></hs-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewayApp.samplingAnnotation.type" [ngbTooltip]="'gatewayApp.samplingAnnotation.help.type' | translate">Type</span></dt>
+                <dd>
+                    <span>{{ annotation.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.samplingAnnotation.start" [ngbTooltip]="'gatewayApp.samplingAnnotation.help.start' | translate">Start</span></dt>
+                <dd>
+                    <span>{{ annotation.start }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.samplingAnnotation.size" [ngbTooltip]="'gatewayApp.samplingAnnotation.help.size' | translate">Size</span></dt>
+                <dd>
+                    <span>{{ annotation.size }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.samplingAnnotation.note" [ngbTooltip]="'gatewayApp.samplingAnnotation.help.note' | translate">Note</span></dt>
+                <dd>
+                    <span>{{ annotation.note }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.samplingAnnotation.text">Text</span></dt>
+                <dd>
+                    <div *ngIf="annotation.textId">
+                        <a [routerLink]="['/text', annotation.textId, 'view']">{{ annotation.textId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/annotation', annotation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

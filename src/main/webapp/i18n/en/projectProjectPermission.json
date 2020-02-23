@@ -1,0 +1,32 @@
+{
+  "gatewayApp": {
+    "projectProjectPermission": {
+      "home": {
+        "title": "Project Permissions",
+        "createLabel": "Create a new Project Permission",
+        "createOrEditLabel": "Create or edit a Project Permission",
+        "notFound": "No Project Permissions found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Project Permission {{ id }}?"
+      },
+      "detail": {
+        "title": "Project Permission"
+      },
+      "user": "User",
+      "permission": "Permission",
+      "project": "Project",
+      "help": {
+        "user": "User to which this permission is assigned.",
+        "permission": "The permission of this entry."
+      }
+    }
+  },
+  "projectApp": {
+    "projectProjectPermission": {
+      "created": "A new Project Permission is created with identifier {{ param }}",
+      "updated": "A Project Permission is updated with identifier {{ param }}",
+      "deleted": "A Project Permission is deleted with identifier {{ param }}"
+    }
+  }
+}

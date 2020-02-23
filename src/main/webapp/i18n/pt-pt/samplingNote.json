@@ -1,0 +1,32 @@
+{
+  "gatewayApp": {
+    "samplingNote": {
+      "home": {
+        "title": "Notes",
+        "createLabel": "Criar novo(a) Note",
+        "createOrEditLabel": "Criar ou editar Note",
+        "notFound": "Nenhum Notes encontrado"
+      },
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Note {{ id }}?"
+      },
+      "detail": {
+        "title": "Note"
+      },
+      "text": "Text",
+      "self": "Self",
+      "sample": "Sample",
+      "help": {
+        "text": "Text of the note",
+        "self": "Is this note private"
+      }
+    }
+  },
+  "samplingApp": {
+    "samplingNote": {
+      "created": "Um novo Note foi criado com o identificador {{ param }}",
+      "updated": "Note com identificador {{ param }} foi actualizado",
+      "deleted": "Note com identificador {{ param }} foi eliminado"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "gatewayApp": {
+    "samplingProtocol": {
+      "home": {
+        "title": "Protocols",
+        "createLabel": "Criar novo(a) Protocol",
+        "createOrEditLabel": "Criar ou editar Protocol",
+        "notFound": "Nenhum Protocols encontrado"
+      },
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Protocol {{ id }}?"
+      },
+      "detail": {
+        "title": "Protocol"
+      },
+      "layout": "Layout",
+      "device": "Device",
+      "pageNumber": "Page Number",
+      "sample": "Sample",
+      "help": {
+        "layout": "Layout in which the protocol has been written",
+        "device": "Device with which the protocol has been written",
+        "pageNumber": "Number of the page (if the protocol contains multiple pages)"
+      }
+    }
+  },
+  "samplingApp": {
+    "samplingProtocol": {
+      "created": "Um novo Protocol foi criado com o identificador {{ param }}",
+      "updated": "Protocol com identificador {{ param }} foi actualizado",
+      "deleted": "Protocol com identificador {{ param }} foi eliminado"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "gatewayApp": {
+    "pbanalysisPBMetadata": {
+      "home": {
+        "title": "PB Metadata",
+        "createLabel": "Create a new PB Metadata",
+        "createOrEditLabel": "Create or edit a PB Metadata",
+        "notFound": "No PB Metadata found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete PB Metadata {{ id }}?"
+      },
+      "detail": {
+        "title": "PB Metadata"
+      },
+      "key": "Key",
+      "value": "Value",
+      "analysis": "Analysis",
+      "help": {
+        "key": "Key of the metadata entry",
+        "value": "Value of the metadata entry"
+      }
+    }
+  },
+  "pbanalysisApp": {
+    "pbanalysisPBMetadata": {
+      "created": "A new PB Metadata is created with identifier {{ param }}",
+      "updated": "A PB Metadata is updated with identifier {{ param }}",
+      "deleted": "A PB Metadata is deleted with identifier {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pBBurst">
+            <h2><span jhiTranslate="gatewayApp.pbanalysisPBBurst.detail.title">PB Burst</span> {{ pBBurst.id }}</h2>
+
+            <hr>
+
+            <hs-alert-error></hs-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewayApp.pbanalysisPBBurst.duration" [ngbTooltip]="'gatewayApp.pbanalysisPBBurst.help.duration' | translate">Duration</span></dt>
+                <dd>
+                    <span>{{ pBBurst.duration }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.pbanalysisPBBurst.pauseDuration" [ngbTooltip]="'gatewayApp.pbanalysisPBBurst.help.pauseDuration' | translate">Pause Duration</span></dt>
+                <dd>
+                    <span>{{ pBBurst.pauseDuration }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.pbanalysisPBBurst.startX" [ngbTooltip]="'gatewayApp.pbanalysisPBBurst.help.startX' | translate">Start X</span></dt>
+                <dd>
+                    <span>{{ pBBurst.startX }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.pbanalysisPBBurst.startY" [ngbTooltip]="'gatewayApp.pbanalysisPBBurst.help.startY' | translate">Start Y</span></dt>
+                <dd>
+                    <span>{{ pBBurst.startY }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.pbanalysisPBBurst.endX" [ngbTooltip]="'gatewayApp.pbanalysisPBBurst.help.endX' | translate">End X</span></dt>
+                <dd>
+                    <span>{{ pBBurst.endX }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.pbanalysisPBBurst.endY" [ngbTooltip]="'gatewayApp.pbanalysisPBBurst.help.endY' | translate">End Y</span></dt>
+                <dd>
+                    <span>{{ pBBurst.endY }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.pbanalysisPBBurst.distance" [ngbTooltip]="'gatewayApp.pbanalysisPBBurst.help.distance' | translate">Distance</span></dt>
+                <dd>
+                    <span>{{ pBBurst.distance }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.pbanalysisPBBurst.avgSpeed" [ngbTooltip]="'gatewayApp.pbanalysisPBBurst.help.avgSpeed' | translate">Avg Speed</span></dt>
+                <dd>
+                    <span>{{ pBBurst.avgSpeed }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.pbanalysisPBBurst.text" [ngbTooltip]="'gatewayApp.pbanalysisPBBurst.help.text' | translate">Text</span></dt>
+                <dd>
+                    <span>{{ pBBurst.text }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.pbanalysisPBBurst.analysis">Analysis</span></dt>
+                <dd>
+                    <div *ngIf="pBBurst.analysisId">
+                        <a [routerLink]="['/pb-analysis', pBBurst.analysisId, 'view']">{{ pBBurst.analysisId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pb-burst', pBBurst.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

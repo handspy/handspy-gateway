@@ -1,0 +1,36 @@
+{
+  "gatewayApp": {
+    "samplingAnnotation": {
+      "home": {
+        "title": "Annotations",
+        "createLabel": "Criar novo(a) Annotation",
+        "createOrEditLabel": "Criar ou editar Annotation",
+        "notFound": "Nenhum Annotations encontrado"
+      },
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Annotation {{ id }}?"
+      },
+      "detail": {
+        "title": "Annotation"
+      },
+      "type": "Type",
+      "start": "Start",
+      "size": "Size",
+      "note": "Note",
+      "text": "Text",
+      "help": {
+        "type": "Type of this annotation",
+        "start": "Start position of the annotation",
+        "size": "Size of the annotation",
+        "note": "Note about annotation"
+      }
+    }
+  },
+  "samplingApp": {
+    "samplingAnnotation": {
+      "created": "Um novo Annotation foi criado com o identificador {{ param }}",
+      "updated": "Annotation com identificador {{ param }} foi actualizado",
+      "deleted": "Annotation com identificador {{ param }} foi eliminado"
+    }
+  }
+}

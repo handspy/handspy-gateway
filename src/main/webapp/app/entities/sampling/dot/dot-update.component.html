@@ -1,0 +1,122 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="hs-dot-heading" jhiTranslate="gatewayApp.samplingDot.home.createOrEditLabel">Create or edit a Dot</h2>
+
+            <div>
+                <hs-alert-error></hs-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingDot.timestamp" for="field_timestamp" [ngbTooltip]="'gatewayApp.samplingDot.help.timestamp' | translate">Timestamp</label>
+                    <div class="d-flex">
+                        <input id="field_timestamp" type="datetime-local" class="form-control" name="timestamp" formControlName="timestamp" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('timestamp')!.invalid && (editForm.get('timestamp')!.dirty || editForm.get('timestamp')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('timestamp')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('timestamp')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingDot.x" for="field_x" [ngbTooltip]="'gatewayApp.samplingDot.help.x' | translate">X</label>
+                    <input type="number" class="form-control" name="x" id="field_x"
+                           formControlName="x"/>
+                    <div *ngIf="editForm.get('x')!.invalid && (editForm.get('x')!.dirty || editForm.get('x')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('x')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('x')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingDot.y" for="field_y" [ngbTooltip]="'gatewayApp.samplingDot.help.y' | translate">Y</label>
+                    <input type="number" class="form-control" name="y" id="field_y"
+                           formControlName="y"/>
+                    <div *ngIf="editForm.get('y')!.invalid && (editForm.get('y')!.dirty || editForm.get('y')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('y')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('y')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingDot.type" for="field_type" [ngbTooltip]="'gatewayApp.samplingDot.help.type' | translate">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="DOWN">{{ 'gatewayApp.DotType.DOWN' | translate }}</option>
+                        <option value="MOVE">{{ 'gatewayApp.DotType.MOVE' | translate }}</option>
+                        <option value="UP">{{ 'gatewayApp.DotType.UP' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingDot.tiltX" for="field_tiltX" [ngbTooltip]="'gatewayApp.samplingDot.help.tiltX' | translate">Tilt X</label>
+                    <input type="number" class="form-control" name="tiltX" id="field_tiltX"
+                           formControlName="tiltX"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingDot.tiltY" for="field_tiltY" [ngbTooltip]="'gatewayApp.samplingDot.help.tiltY' | translate">Tilt Y</label>
+                    <input type="number" class="form-control" name="tiltY" id="field_tiltY"
+                           formControlName="tiltY"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingDot.twist" for="field_twist" [ngbTooltip]="'gatewayApp.samplingDot.help.twist' | translate">Twist</label>
+                    <input type="number" class="form-control" name="twist" id="field_twist"
+                           formControlName="twist"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingDot.pressure" for="field_pressure" [ngbTooltip]="'gatewayApp.samplingDot.help.pressure' | translate">Pressure</label>
+                    <input type="number" class="form-control" name="pressure" id="field_pressure"
+                           formControlName="pressure"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.samplingDot.protocol" for="field_protocol">Protocol</label>
+                    <select class="form-control" id="field_protocol" name="protocol" formControlName="protocolId">
+                        <option *ngIf="!editForm.get('protocolId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="protocolOption.id" *ngFor="let protocolOption of protocols; trackBy: trackById">{{ protocolOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('protocolId')!.invalid && (editForm.get('protocolId')!.dirty || editForm.get('protocolId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('protocolId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

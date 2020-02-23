@@ -1,0 +1,111 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="hs-participant-heading" jhiTranslate="gatewayApp.projectParticipant.home.createOrEditLabel">Create or edit a Participant</h2>
+
+            <div>
+                <hs-alert-error></hs-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.projectParticipant.name" for="field_name" [ngbTooltip]="'gatewayApp.projectParticipant.help.name' | translate">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                    <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.projectParticipant.gender" for="field_gender" [ngbTooltip]="'gatewayApp.projectParticipant.help.gender' | translate">Gender</label>
+                    <select class="form-control" name="gender" formControlName="gender" id="field_gender">
+                        <option value="MALE">{{ 'gatewayApp.Gender.MALE' | translate }}</option>
+                        <option value="FEMALE">{{ 'gatewayApp.Gender.FEMALE' | translate }}</option>
+                        <option value="OTHER">{{ 'gatewayApp.Gender.OTHER' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.projectParticipant.birthdate" for="field_birthdate" [ngbTooltip]="'gatewayApp.projectParticipant.help.birthdate' | translate">Birthdate</label>
+                    <div class="input-group">
+                        <input id="field_birthdate" type="text" class="form-control" name="birthdate" ngbDatepicker #birthdateDp="ngbDatepicker" formControlName="birthdate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="birthdateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.projectParticipant.handedness" for="field_handedness" [ngbTooltip]="'gatewayApp.projectParticipant.help.handedness' | translate">Handedness</label>
+                    <select class="form-control" name="handedness" formControlName="handedness" id="field_handedness">
+                        <option value="LEFT_HAND">{{ 'gatewayApp.HandwritingMeans.LEFT_HAND' | translate }}</option>
+                        <option value="RIGHT_HAND">{{ 'gatewayApp.HandwritingMeans.RIGHT_HAND' | translate }}</option>
+                        <option value="OTHER">{{ 'gatewayApp.HandwritingMeans.OTHER' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.projectParticipant.additionalInfo" for="field_additionalInfo" [ngbTooltip]="'gatewayApp.projectParticipant.help.additionalInfo' | translate">Additional Info</label>
+                    <input type="text" class="form-control" name="additionalInfo" id="field_additionalInfo"
+                           formControlName="additionalInfo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.projectParticipant.image" for="field_image" [ngbTooltip]="'gatewayApp.projectParticipant.help.image' | translate">Image</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('imageContentType')!.value + ';base64,' + editForm.get('image')!.value" style="max-height: 100px;" *ngIf="editForm.get('image')!.value" alt="participant image"/>
+                        <div *ngIf="editForm.get('image')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('imageContentType')!.value }}, {{ byteSize(editForm.get('image')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('image', 'imageContentType', 'file_image')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image" (change)="setFileData($event, 'image', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image" id="field_image"
+                           formControlName="image"/>
+                    <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                           formControlName="imageContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.projectParticipant.project" for="field_project">Project</label>
+                    <select class="form-control" id="field_project" name="project" formControlName="projectId">
+                        <option *ngIf="!editForm.get('projectId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="projectOption.id" *ngFor="let projectOption of projects; trackBy: trackById">{{ projectOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('projectId')!.invalid && (editForm.get('projectId')!.dirty || editForm.get('projectId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('projectId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="gatewayApp.projectParticipant.labels" for="field_labels">Labels</label>
+                    <select class="form-control" id="field_labels" multiple name="labels" formControlName="labels">
+                        <option [ngValue]="getSelected(editForm.get('labels')!.value, labelOption)" *ngFor="let labelOption of labels; trackBy: trackById">{{ labelOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "gatewayApp": {
+    "DotType": {
+      "null": "",
+      "DOWN": "DOWN",
+      "MOVE": "MOVE",
+      "UP": "UP"
+    }
+  }
+}

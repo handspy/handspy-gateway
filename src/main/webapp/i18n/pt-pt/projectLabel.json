@@ -1,0 +1,34 @@
+{
+  "gatewayApp": {
+    "projectLabel": {
+      "home": {
+        "title": "Labels",
+        "createLabel": "Criar novo(a) Label",
+        "createOrEditLabel": "Criar ou editar Label",
+        "notFound": "Nenhum Labels encontrado"
+      },
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Label {{ id }}?"
+      },
+      "detail": {
+        "title": "Label"
+      },
+      "name": "Name",
+      "color": "Color",
+      "project": "Project",
+      "participants": "Participants",
+      "tasks": "Tasks",
+      "help": {
+        "name": "Name of the label",
+        "color": "Color of the label"
+      }
+    }
+  },
+  "projectApp": {
+    "projectLabel": {
+      "created": "Um novo Label foi criado com o identificador {{ param }}",
+      "updated": "Label com identificador {{ param }} foi actualizado",
+      "deleted": "Label com identificador {{ param }} foi eliminado"
+    }
+  }
+}

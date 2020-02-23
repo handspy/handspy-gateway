@@ -1,0 +1,45 @@
+{
+  "gatewayApp": {
+    "samplingLayout": {
+      "home": {
+        "title": "Layouts",
+        "createLabel": "Create a new Layout",
+        "createOrEditLabel": "Create or edit a Layout",
+        "notFound": "No Layouts found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Layout {{ id }}?"
+      },
+      "detail": {
+        "title": "Layout"
+      },
+      "name": "Name",
+      "description": "Description",
+      "width": "Width",
+      "height": "Height",
+      "marginLeft": "Margin Left",
+      "marginRight": "Margin Right",
+      "marginTop": "Margin Top",
+      "marginBottom": "Margin Bottom",
+      "url": "Url",
+      "help": {
+        "name": "Name of the layout",
+        "description": "Details about the layout",
+        "width": "Width of the layout (mm)",
+        "height": "Height of the layout (mm)",
+        "marginLeft": "Left margin of the layout (mm)",
+        "marginRight": "Right margin of the layout (mm)",
+        "marginTop": "Top margin of the layout (mm)",
+        "marginBottom": "Bottom margin of the layout (mm)",
+        "url": "URL to download the layout (mm)"
+      }
+    }
+  },
+  "samplingApp": {
+    "samplingLayout": {
+      "created": "A new Layout is created with identifier {{ param }}",
+      "updated": "A Layout is updated with identifier {{ param }}",
+      "deleted": "A Layout is deleted with identifier {{ param }}"
+    }
+  }
+}

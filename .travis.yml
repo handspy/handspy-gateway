@@ -10,6 +10,7 @@ cache:
     - node
     - node_modules
     - $HOME/.gradle
+    - $HOME/.yarn-cache
 env:
   global:
     - NODE_VERSION=12.14.0
@@ -17,7 +18,6 @@ env:
     - SPRING_JPA_SHOW_SQL=false
     - JHI_DISABLE_WEBPACK_LOGS=true
     - NG_CLI_ANALYTICS="false"
-    - secure: VUgttRoqHE8vySvgei68tPyIijbzI6Q/ICm3ZtuWAPvyGes/C4qRXrJrYSzYc/cCALWcKBeFcfb6BuoCSG+++JCLKCk5q4JQyTDrOoSsAMm0fa3s3E6AY92Ydwhxd1ot/OY1nZ84YNLo6CobmvTh4kybenhpK1AxLZzG7Bqug5ZjxtWGryUUIsiP+1Q4dGm2coTGQPq7HpIDb9O5AbBb3RimDj2Mq3Bz61V7fLMMvjLHjzrZICWPmeu8QUZ7HMxsoenHj/gg+codITSiJsPUd+M1HXHzI7JfSThLrAHmmLp2BmJBZ3wx1BxqBwfS50oxj1CwDLsvIa6Z+ACd9sBmeoP2oTHT77rZjrf7x+zivB9E0JwoXD6JyWFOzHKBkdP4i4zmtyCzW3aNfkMwFv0ny5DrdKDNTPbqsJYJlcys4brO4SoYobWUZ1xAmLnUReDEsRuRTFh++o+Ynfje/OKujOsfy+OrQhAruXvPaO2jtAqKmh7ky6eTRozLybmaMVAAa2zlEg9AHvEiLANMA1rlJopGF25PY+ZcRHScTj0fXp9/VnYoD47cjhhQAFzbz80yeqxjxA9gAlPggvYlpMuU3yUX3ytuQ1qCfGPH1aKNcRRSwfsrHLNAnvcaaey8lfJllmQ/w3P1WuX6nNYWmIIl9M6udLBNn56SKYsMvLZX+Vk=
 before_install:
   - |
     if [[ $JHI_JDK = '8' ]]; then
@@ -33,8 +33,11 @@ before_install:
   - java -version
   - sudo /etc/init.d/mysql stop
   - sudo /etc/init.d/postgresql stop
+  # Repo for Yarn
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
 install:
-  -  install
+  - yarn install
 script:
   - chmod +x gradlew
   - ./gradlew checkstyleNohttp

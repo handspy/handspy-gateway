@@ -24,6 +24,7 @@
     "uaaBaseName": "uaa",
     "cacheProvider": "no",
     "buildTool": "gradle",
+    "clientPackageManager": "yarn",
     "useSass": true,
     "serverPort": "8080",
     "jhipsterVersion": "6.7.1",

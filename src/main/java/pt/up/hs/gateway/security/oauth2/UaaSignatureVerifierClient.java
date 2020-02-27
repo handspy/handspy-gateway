@@ -43,7 +43,8 @@ public class UaaSignatureVerifierClient implements OAuth2SignatureVerifierClient
         try {
             HttpEntity<Void> request = new HttpEntity<Void>(new HttpHeaders());
             String key = (String) restTemplate
-                .exchange(getPublicKeyEndpoint(), HttpMethod.GET, request, Map.class).getBody()
+                .exchange(getPublicKeyEndpoint(), HttpMethod.GET, request, Map.class)
+                .getBody()
                 .get("value");
             return new RsaVerifier(key);
         } catch (IllegalStateException ex) {

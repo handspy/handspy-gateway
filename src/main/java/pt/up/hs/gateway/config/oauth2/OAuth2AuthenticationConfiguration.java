@@ -76,5 +76,4 @@ public class OAuth2AuthenticationConfiguration extends ResourceServerConfigurerA
     public TokenExtractor tokenExtractor() {
         return new CookieTokenExtractor();
     }
-
 }

@@ -1,6 +1,6 @@
 # HandSpy Gateway Microservice
 
-This application is the User Account and Authentication (UAA) microservice of HandSpy.
+This application is the Gateway microservice of HandSpy.
 
 ## Building for production
 
@@ -30,14 +30,6 @@ To package your application as a war in order to deploy it to an application ser
 To launch your application's tests, run:
 
     ./gradlew test integrationTest jacocoTestReport
-
-### Client tests
-
-Unit tests are run by [Jest][] and written with [Jasmine][]. They're located in [src/test/javascript/](src/test/javascript/) and can be run with:
-
-    yarn test
-
-For more information, refer to the [Running tests page][].
 
 ### Code quality
 
@@ -71,28 +63,3 @@ Then run:
     docker-compose -f src/main/docker/app.yml up -d
 
 For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
-
-## Continuous Integration (optional)
-
-To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
-
-[jhipster homepage and latest documentation]: https://www.jhipster.tech
-[jhipster 6.7.1 archive]: https://www.jhipster.tech/documentation-archive/v6.7.1
-[doing microservices with jhipster]: https://www.jhipster.tech/documentation-archive/v6.7.1/microservices-architecture/
-[using jhipster in development]: https://www.jhipster.tech/documentation-archive/v6.7.1/development/
-[service discovery and configuration with the jhipster-registry]: https://www.jhipster.tech/documentation-archive/v6.7.1/microservices-architecture/#jhipster-registry
-[using docker and docker-compose]: https://www.jhipster.tech/documentation-archive/v6.7.1/docker-compose
-[using jhipster in production]: https://www.jhipster.tech/documentation-archive/v6.7.1/production/
-[running tests page]: https://www.jhipster.tech/documentation-archive/v6.7.1/running-tests/
-[code quality page]: https://www.jhipster.tech/documentation-archive/v6.7.1/code-quality/
-[setting up continuous integration]: https://www.jhipster.tech/documentation-archive/v6.7.1/setting-up-ci/
-[node.js]: https://nodejs.org/
-[yarn]: https://yarnpkg.org/
-[webpack]: https://webpack.github.io/
-[angular cli]: https://cli.angular.io/
-[browsersync]: https://www.browsersync.io/
-[jest]: https://facebook.github.io/jest/
-[jasmine]: https://jasmine.github.io/2.0/introduction.html
-[protractor]: https://angular.github.io/protractor/
-[leaflet]: https://leafletjs.com/
-[definitelytyped]: https://definitelytyped.org/

@@ -56,8 +56,7 @@ public abstract class OAuth2TokenEndpointClientAdapter implements OAuth2TokenEnd
             log.debug("failed to authenticate user with OAuth2 token endpoint, status: {}", responseEntity.getStatusCodeValue());
             throw new HttpClientErrorException(responseEntity.getStatusCode());
         }
-        OAuth2AccessToken accessToken = responseEntity.getBody();
-        return accessToken;
+        return responseEntity.getBody();
     }
 
     /**

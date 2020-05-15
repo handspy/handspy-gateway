@@ -38,6 +38,7 @@ eureka:
       git-commit: ${git.commit.id.abbrev:}
       git-branch: ${git.branch:}
 ribbon:
+  ReadTimeout: 60000
   eureka:
     enabled: true
 # See http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
@@ -57,7 +58,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 60000
 
 management:
   endpoints:
@@ -169,18 +170,18 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: gateway@localhost
+    from: support@handspy.up.pt
   swagger:
     default-include-pattern: /api/.*
-    title: gateway API
-    description: gateway API documentation
+    title: HandSpy Gateway Microservice API
+    description: HandSpy Gateway Microservice API documentation
     version: 0.0.1
-    terms-of-service-url:
-    contact-name:
-    contact-url:
-    contact-email:
-    license:
-    license-url:
+    terms-of-service-url: https://handspy.up.pt/terms-of-service
+    contact-name: HandSpy Support Team
+    contact-url: https://handspy.up.pt/contact
+    contact-email: support@handspy.up.pt
+    license: GNU GPLv3
+    license-url: https://www.gnu.org/licenses/gpl-3.0.html
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class

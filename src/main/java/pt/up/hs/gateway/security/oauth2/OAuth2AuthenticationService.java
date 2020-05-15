@@ -25,7 +25,7 @@ public class OAuth2AuthenticationService {
     /**
      * Number of milliseconds to cache refresh token grants so we don't have to repeat them in case of parallel requests.
      */
-    private static final long REFRESH_TOKEN_VALIDITY_MILLIS = 10000l;
+    private static final long REFRESH_TOKEN_VALIDITY_MILLIS = 10000L;
 
     /**
      * Used to contact the OAuth2 token endpoint.
@@ -63,7 +63,7 @@ public class OAuth2AuthenticationService {
         try {
             String username = params.get("username");
             String password = params.get("password");
-            boolean rememberMe = Boolean.valueOf(params.get("rememberMe"));
+            boolean rememberMe = Boolean.parseBoolean(params.get("rememberMe"));
             OAuth2AccessToken accessToken = authorizationClient.sendPasswordGrant(username, password);
             OAuth2Cookies cookies = new OAuth2Cookies();
             cookieHelper.createCookies(request, accessToken, rememberMe, cookies);

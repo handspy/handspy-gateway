@@ -124,6 +124,9 @@ spring:
       thread-name-prefix: gateway-scheduling-
       pool:
         size: 2
+  servlet:
+    multipart:
+      max-file-size: 10MB
   thymeleaf:
     mode: HTML
   output:

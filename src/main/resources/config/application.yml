@@ -38,7 +38,8 @@ eureka:
       git-commit: ${git.commit.id.abbrev:}
       git-branch: ${git.branch:}
 ribbon:
-  ReadTimeout: 300000
+  ConnectTimeout: 50000
+  ReadTimeout: 250000
   eureka:
     enabled: true
 # See http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
@@ -58,7 +59,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 300000
+            timeoutInMilliseconds: 600000
 
 management:
   endpoints:
